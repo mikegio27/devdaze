@@ -67,8 +67,8 @@ jobs:
       - 
         name: Add Bitnami Helm Repo
         run: | 
-        helm init
-        helm repo add bitnami https://charts.bitnami.com/bitnami
+          helm init
+          helm repo add bitnami https://charts.bitnami.com/bitnami
 
       - 
         name: Deploy MongoDB
