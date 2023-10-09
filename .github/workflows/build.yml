@@ -36,10 +36,18 @@ jobs:
            go get .
            go mod tidy
            go build -o server main.go
+           echo "Moving binary.."
            mv server ..
+           echo "checking..."
+           ls -al
+           cd ..
+           echo "checking..."
+           ls -al
       -
         name: Build and push
         uses: docker/build-push-action@v5
         with:
+          context: .
+          file: ./Dockerfile
           push: true
           tags: user/app:latest
