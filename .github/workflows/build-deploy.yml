@@ -76,11 +76,9 @@ jobs:
           
           echo "${{ secrets.DOCKERHUB_TOKEN }}" | helm registry login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin registry-1.docker.io
 
-          helm chart pull registry-1.docker.io/bitnamicharts/mongodb:latest
+           helm pull oci://registry-1.docker.io/bitnamicharts/mongodb
 
-          helm chart save registry-1.docker.io/bitnamicharts/mongodb:latest dozy-mongodb
-
-          helm install web-apps-mongodb ./dozy-mongodb \
+          helm install web-apps-mongodb oci://registry-1.docker.io/bitnamicharts/mongodb \
             --set mongodb.username=${{ secrets.MONGO_USERNAME }} \
             --set mongodb.password=${{ secrets.MONGO_PASSWORD }} \
             --set mongodb.database=${{ secrets.MONGO_DATABASE }}
