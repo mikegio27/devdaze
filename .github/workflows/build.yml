@@ -23,7 +23,11 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build binary
-        run: cd src && go build -o server src/main.go
+        run: |
+           cd ./src
+           go get .
+           go mod tidy
+           go build -o server main.go
       -
         name: Build and push
         uses: docker/build-push-action@v5
