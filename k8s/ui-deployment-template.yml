@@ -14,7 +14,7 @@ spec:
       containers:
       - name: resume-ui
         image: dozy27/resume-ui:latest
-        imagePullPolicy: always
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
       imagePullSecrets:
