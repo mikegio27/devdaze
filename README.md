@@ -1,4 +1,4 @@
-# resume-api
+# resume-app
 A go API that serves my resume data from a Mongo DB.
 
 ### Running Locally
