@@ -26,7 +26,7 @@ jobs:
       -
         name: Build binary
         run: |
-           cd src
+           cd resume-api
            go get .
            go mod tidy
            go build -o server main.go

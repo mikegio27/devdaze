@@ -1,0 +1,92 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #2c3e50; /* Darker grey background */
+  margin: 0;
+  padding: 0;
+  color: #ecf0f1; /* Light color for contrast against the dark background */
+}
+
+.resume {
+  max-width: 800px;
+  background-color: #34495e; /* Slightly lighter than the body for contrast */
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  text-align: left; /* Align text to the left */
+}
+
+h2 {
+  font-size: 24px;
+  color: #ecf0f1;
+  margin-top: 0;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  color: #bdc3c7; /* Slightly darker color for subheadings */
+  margin-top: 10px;
+}
+
+p, li, div {
+  font-size: 16px;
+  color: #bdc3c7; /* Slightly darker color for regular text */
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
+
+.job {
+  margin-bottom: 30px;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .skills {
+      grid-template-columns: 1fr;
+  }
+}
