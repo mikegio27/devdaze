@@ -76,13 +76,15 @@ jobs:
           
           echo "${{ secrets.DOCKERHUB_TOKEN }}" | helm registry login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin registry-1.docker.io
 
-           helm pull oci://registry-1.docker.io/bitnamicharts/mongodb
-
+          helm pull oci://registry-1.docker.io/bitnamicharts/mongodb
+          echo "auth:" > custom-values.yaml
+          echo "  rootPassword: ${{ secrets.MONGO_USERNAME }}" >> custom-values.yaml
+          echo "  username: ${{ secrets.MONGO_USERNAME }}" >> custom-values.yaml
+          echo "  password: ${{ secrets.MONGO_PASSWORD }}" >> custom-values.yaml
+          echo "  database: ${{ secrets.MONGO_DATABASE }}" >> custom-values.yaml
           helm upgrade web-apps-mongodb oci://registry-1.docker.io/bitnamicharts/mongodb \
             --install \
-            --set auth.username=${{ secrets.MONGO_USERNAME }} \
-            --set auth.password=${{ secrets.MONGO_PASSWORD }} \
-            --set auth.database=${{ secrets.MONGO_DATABASE }}
+            -f custom-values.yaml
 
       - 
         name: Connect to Kubernetes cluster
