@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/mikegio27/resume-api/src/database"
-	v1 "github.com/mikegio27/resume-api/src/v1"
+	"github.com/mikegio27/resume-api/database"
+	v1 "github.com/mikegio27/resume-api/v1"
 )
 
 func main() {

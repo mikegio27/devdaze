@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
-	"github.com/mikegio27/resume-api/src/services"
+	"github.com/mikegio27/resume-api/services"
 )
 
 func TechSkills(c *gin.Context) {
