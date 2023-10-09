@@ -36,3 +36,33 @@ spec:
               key: MONGO_DATABASE
       imagePullSecrets:
       - name: dockerhub-credentials
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-service
+spec:
+  selector:
+    app: resume-api   
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080  
+#---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: api-ingress
+# spec:
+#   rules:
+#   - host: api.yourdomain.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: api-service
+#             port:
+#               number: 80
+

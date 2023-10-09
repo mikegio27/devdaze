@@ -11,7 +11,7 @@ import (
 func main() {
 	username := os.Getenv("MONGO_USERNAME")
 	pass := os.Getenv("MONGO_PASSWORD")
-	uri := fmt.Sprintf("mongodb://%s:%s@localhost:27017/", username, pass)
+	uri := fmt.Sprintf("mongodb://%s:%s@web-apps-mongodb.default.svc.cluster.local:27017/", username, pass)
 	database.ConnectMongoDB(uri)
 	r := v1.SetupRouter()
 
