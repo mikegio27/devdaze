@@ -23,6 +23,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build binary
+        uses: actions/checkout@v3
         run: |
            cd ./src
            go get .
