@@ -1,5 +1,6 @@
 FROM golang:latest
 
+
 COPY server .
 
-ENTRYPOINT [ "server" ]
+ENTRYPOINT [ "./server" ]
