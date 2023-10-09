@@ -1,5 +1,5 @@
 FROM golang:latest
 
-COPY src/server .
+COPY server .
 
 ENTRYPOINT [ "server" ]
