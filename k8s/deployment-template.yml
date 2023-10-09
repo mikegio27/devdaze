@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-deployment
+  name: resume-api
 spec:
   replicas: 1
   selector:
@@ -15,6 +15,7 @@ spec:
       containers:
       - name: resume-api
         image: dozy27/resume-api:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         env:
