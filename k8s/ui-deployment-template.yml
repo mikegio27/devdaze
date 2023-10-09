@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resume-ui
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: resume-ui
+  template:
+    metadata:
+      labels:
+        app: resume-ui
+    spec:
+      containers:
+      - name: resume-ui
+        image: resume-ui:version
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: resume-ui
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: resume-ui
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: resume-ui-ingress
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  rules:
+  - host: devdaze.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: resume-ui
+            port:
+              number: 80
