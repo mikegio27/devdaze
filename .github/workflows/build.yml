@@ -6,9 +6,12 @@ on:
       - 'main'
 
 jobs:
-  docker:
+  docker-build-push:
     runs-on: ubuntu-latest
     steps:
+      -
+        name: Get repo
+        uses: actions/checkout@v3
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -23,9 +26,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build binary
-        uses: actions/checkout@v3
         run: |
-           cd ./src
+           cd src
            go get .
            go mod tidy
            go build -o server main.go
