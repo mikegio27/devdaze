@@ -74,12 +74,12 @@ jobs:
             --set mongodb.username=${{ secrets.MONGO_USERNAME }} \
             --set mongodb.password=${{ secrets.MONGO_PASSWORD }} \
             --set mongodb.database=${{ secrets.MONGO_DATABASE }}
-            
+
       - name: Connect to Kubernetes cluster
         run: |
           echo "$KUBECONFIG_FILE" > kubeconfig.yml
           export KUBECONFIG=kubeconfig.yml
-
+          
       - name: Create Kubernetes Secret
         run: |
           kubectl create secret generic mongo-secret \
