@@ -80,9 +80,9 @@ jobs:
 
           helm upgrade web-apps-mongodb oci://registry-1.docker.io/bitnamicharts/mongodb \
             --install \
-            --set mongodb.username=${{ secrets.MONGO_USERNAME }} \
-            --set mongodb.password=${{ secrets.MONGO_PASSWORD }} \
-            --set mongodb.database=${{ secrets.MONGO_DATABASE }}
+            --set auth.username=${{ secrets.MONGO_USERNAME }} \
+            --set auth.password=${{ secrets.MONGO_PASSWORD }} \
+            --set auth.database=${{ secrets.MONGO_DATABASE }}
 
       - 
         name: Connect to Kubernetes cluster
