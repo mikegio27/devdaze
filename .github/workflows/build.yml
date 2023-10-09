@@ -22,6 +22,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
+        name: Build binary
+        uses: go build -o server src/main.go
+      -
         name: Build and push
         uses: docker/build-push-action@v5
         with:
