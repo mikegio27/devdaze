@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: resume-ui
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: resume-ui
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: resume-ui
-        image: resume-ui:version
+        image: dozy27/resume-ui:version
       imagePullSecrets:
       - name: dockerhub-credentials
 ---
