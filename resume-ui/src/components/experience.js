@@ -4,7 +4,7 @@ const Experience = () => {
     const [experienceData, setExperienceData] = useState();
 
     useEffect(() => {
-        fetch("http://localhost:8080/resume/experience")
+        fetch("http://api-service.web-apps.svc.cluster.local/resume/experience")
             .then(response => response.json())
             .then(data => {
                 setExperienceData(data);

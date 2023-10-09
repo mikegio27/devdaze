@@ -5,7 +5,7 @@ const Objective = () => {
 
     useEffect(() => {
         // Replace this URL with your API endpoint
-        fetch("http://localhost:8080/resume/objective")
+        fetch("http://api-service.web-apps.svc.cluster.local/resume/objective")
             .then(response => response.json())
             .then(data => {
                 setObjectiveData(data.objective);
