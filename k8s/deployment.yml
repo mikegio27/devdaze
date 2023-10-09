@@ -1,0 +1,39 @@
+api:
+  image: dozy27/resume-api:latest
+  port: 8080
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: resume-api
+  template:
+    metadata:
+      labels:
+        app: resume-api
+    spec:
+      containers:
+      - name: resume-api
+        image: {{ .Values.api.image }}
+        ports:
+        - containerPort: {{ .Values.api.port }}
+        env:
+        - name: MONGO_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: MONGO_USERNAME
+        - name: MONGO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: MONGO_PASSWORD
+        - name: MONGO_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: MONGO_DATABASE
