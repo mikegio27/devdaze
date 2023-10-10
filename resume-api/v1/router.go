@@ -12,9 +12,10 @@ func SetupRouter() *gin.Engine {
 	api := r.Group("/resume")
 	config := cors.DefaultConfig()
 	config.AllowOrigins = []string{"*"}
-	config.AllowMethods = []string{"GET", "OPTIONS"}
+	config.AllowMethods = []string{"PUT", "GET", "POST", "OPTIONS"}
 	config.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type", "Authorization"}
 	config.ExposeHeaders = []string{"Content-Length"}
+	config.AllowCredentials = true
 	config.MaxAge = 12 * time.Hour
 
 	api.Use(cors.New(config))
