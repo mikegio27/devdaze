@@ -29,11 +29,21 @@ metadata:
   labels:
     app: resume-ui
 spec:
+  rules:
+  - http:
+      paths:
+      - path: /*
+        backend:
+          service:
+            name: resume-ui-backend
+            port:
+              number: 8080
   defaultBackend:
     service:
       name: resume-ui-backend
       port:
         number: 8080
+  
 ---
 apiVersion: v1
 kind: Service
