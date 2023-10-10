@@ -48,6 +48,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: resume-ui
+            name: resume-api
             port:
               number: 80
