@@ -1,0 +1,86 @@
+{
+    "resume": {
+        "objective": "I am an ambitious and dedicated professional with a strong desire to grow my skills with software engineering on a team that challenges me to perform at my highest level. To help my life-long learning goals, I am seeking a collaborative environment to work with experienced individuals to share and develop my skills with programming and infrastructure. With a strong DevOps background, finding solutions to tricky situations programmatically is my specialty.",
+        "experience": [
+            {
+                "title": "Lead Sofware Engineer",
+                "company": "Sate Farm",
+                "department": "Contact Center Data Hub",
+                "date": "August 2023-Present",
+                "duties": [
+                    "Design and develop solutions for data pipelines involving contact records and agent metrics for custom contacts utilizing AWS Connect, Kinesis streams and analytics, S3, and Glue",
+                    "Maintain and enhance APIs for data access that downstream reporting applications consume",
+                    "Ensure integrity and availability of contact data including contact records, transcripts, screen and call recordings",
+                    "Lead other engineers in accomplishing their work, assist with troubleshooting, and drive best practices to avoid disaster and recover quickly when it inevitably happens."
+                ]
+            },
+            {
+                "title": "Lead Software Engineer",
+                "company": "State Farm",
+                "department": "Product Delivery Experience - Application Security",
+                "date": "May 2021-August 2023",
+                "duties": [
+                    "Manage and acquire new tools to better State Farm’s application security posture. Enable engineers to use the best SAST, SCA, and Container scanning available while creating minimal impact on the cadence of software delivery.",
+                    "Significantly reduced overall application vulnerabilities by bringing in new application security tools and developing simple self-service or event driven options for consumers.",
+                    "Created event driven auditing and governance automation through the use of webhooks, AWS lambdas, and OpenSearch that helps guide next steps for improving security by evaluating consolidated data and ensuring utilization.",
+                    "Reduced time to manage and utilize multiple security tools through the use of Golang, NodeJS, and Python CLIs and APIs. This significantly reduced time to adopt new tools for engineers"
+                ]
+            },
+            {
+                "title": "Infrastructure Analyst",
+                "company": "Sate Farm",
+                "department": "Core Computing and Operations",
+                "date": "August 2019-May 2021",
+                "duties": [
+                    "Provide management and support for Pivotal Cloud Foundry and monitor the platform, resolving alerts and preventing them from happening again, as well as scaling the platform to ensure stability and availability.",
+                    "Support developers by assisting them troubleshoot issues with their applications, find root cause, and remediate any platform issues.",
+                    "Create fully automated solutions to reduce manual work for alert remediation and automate requests for service as soon as they are submitted.",
+                    "Effectively collaborate and communicate with multiple teams spanning most of Enterprise Technology to resolve platform issues and create automation.",
+                    "Monitor, troubleshoot, and resolve issues with VMs deployed in vCenter."
+                ]
+            }
+        ],
+        "techSkills": {
+            "languages": [
+                "Python",
+                "JavaScript",
+                "Golang",
+                "Java"
+            ],
+            "platforms": [
+                "AWS Compute Services",
+                "Kubernetes",
+                "Pivotal Cloud Foundry"
+            ],
+            "linux": [
+                "Ubuntu",
+                "Alpine",
+                "Debian"
+            ],
+            "cicd": [
+                "GitLab CI",
+                "GitHub Actions"
+            ],
+            "monitoring": [
+                "Grafana",
+                "DataDog",
+                "Splunk"
+            ],
+            "iac": [
+                "Terraform",
+                "Helm",
+                "Ansible"
+            ],
+            "databases": [
+                "DynamoDB",
+                "MongoDB",
+                "OpenSearch",
+                "Neo4j"
+            ]
+        },
+        "accomplishments": [
+            "I have implemented SaaS and PaaS solutions at enterprise scale, with the use of necessary brokers and services to allow the tools to be used efficiently while meeting the required standards of State Farm.",
+            "I have contributed to automation written in Python, JavaScript, and GoLang that has reduced work on requests, remediation, and security scanning by thousands of hours. "
+        ]
+    }
+}

@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/mikegio27/resume-api/database"
+	"github.com/mikegio27/resume-api/utils"
 	v1 "github.com/mikegio27/resume-api/v1"
 )
 
@@ -14,6 +15,7 @@ func main() {
 	//uri := fmt.Sprintf("mongodb://%s:%s@localhost:27017", username, pass)
 	uri := fmt.Sprintf("mongodb://%s:%s@web-apps-mongodb.web-apps.svc.cluster.local:27017/resume", username, pass)
 	database.ConnectMongoDB(uri)
+	utils.LoadMongoData("resume.json", "resume", uri)
 	r := v1.SetupRouter()
 
 	r.Run(":8080")
