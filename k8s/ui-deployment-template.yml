@@ -26,30 +26,9 @@ metadata:
   name: resume-ui
 spec:
   type: LoadBalancer
+  loadBalancerIP: 34.82.201.233
   ports:
   - port: 80
+    targetPort: 8080
   selector:
     app: resume-ui
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: ui-ingress-name
-  annotations:
-    nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "*"  # This is the origin that needs to access the UI.
-    nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization"
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-spec:
-  rules:
-  - host: resume.devdaze.org
-    http:
-      paths:
-      - backend:
-          service:
-            name: resume-ui
-            port:
-              number: 80
-        path: /
-        pathType: Prefix
