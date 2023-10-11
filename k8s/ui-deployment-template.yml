@@ -39,7 +39,7 @@ spec:
             name: resume-ui-service
             port:
               number: 80
-  backend:
+  defaultBackend:
     service:
       name: resume-ui-service
       port:
@@ -60,4 +60,3 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 80
----
