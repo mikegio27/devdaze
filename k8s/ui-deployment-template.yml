@@ -30,15 +30,6 @@ metadata:
   labels:
     app: resume-ui
 spec:
-  rules:
-  - http:
-      paths:
-      - path: /*
-        backend:
-          service:
-            name: resume-ui-service
-            port:
-              number: 80
   defaultBackend:
     service:
       name: resume-ui-service
