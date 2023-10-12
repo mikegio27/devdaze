@@ -9,3 +9,5 @@ To run the application locally run:
 * * This script loads the DB with the JSON data into a collection called `resume`
 * `go run src/main.go`
 * * Start running the API
+
+### K8s stuff..
