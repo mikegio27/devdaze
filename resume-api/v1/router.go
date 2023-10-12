@@ -19,6 +19,7 @@ func SetupRouter() *gin.Engine {
 	config.MaxAge = 12 * time.Hour
 	log.Println("Router started...")
 	r.Use(cors.New(config))
+	r.GET("/health", Healthcheck)
 	api := r.Group("/resume")
 	{
 		api.GET("/experience", Experience)
