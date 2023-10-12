@@ -10,7 +10,6 @@ import (
 
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
-	api := r.Group("/resume")
 	config := cors.DefaultConfig()
 	config.AllowAllOrigins = true
 	config.AllowMethods = []string{"PUT", "GET", "POST", "OPTIONS"}
@@ -19,7 +18,8 @@ func SetupRouter() *gin.Engine {
 	config.AllowCredentials = true
 	config.MaxAge = 12 * time.Hour
 	log.Println("Router started...")
-	api.Use(cors.New(config))
+	r.Use(cors.New(config))
+	api := r.Group("/resume")
 	{
 		api.GET("/experience", Experience)
 		api.GET("/objective", Objective)
