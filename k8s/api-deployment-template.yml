@@ -17,7 +17,7 @@ spec:
         image: dozy27/resume-api:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         env:
         - name: MONGO_USERNAME
           valueFrom:
@@ -47,4 +47,4 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080  
+      targetPort: 80  
