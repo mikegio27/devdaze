@@ -43,6 +43,7 @@ metadata:
   name: resume-api
   annotations:
     kubernetes.io/ingress.global-static-ip-name: devdaze-api-ip
+    kubernetes.io/ingress.class: "gce"
   labels:
     app: resume-api
 spec:
