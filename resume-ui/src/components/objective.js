@@ -5,10 +5,7 @@ const Objective = () => {
 
     useEffect(() => {
         // Replace this URL with your API endpoint
-        fetch("http://api-service:80/resume/objective", {
-            method: "GET",
-            mode: 'cors'
-        })
+        fetch("http://api-service:80/resume/objective")
             .then(response => response.json())
             .then(data => {
                 setObjectiveData(data.objective);
