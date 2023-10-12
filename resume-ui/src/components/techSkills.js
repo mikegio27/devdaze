@@ -4,7 +4,10 @@ const TechSkills = () => {
     const [techSkillsData, setTechSkillsData] = useState();
 
     useEffect(() => {
-        fetch("http://api-service:80/resume/techskills")
+        fetch("http://api-service:80/resume/techskills", {
+            method: "GET",
+            mode: 'cors'
+        })
             .then(response => response.json())
             .then(data => {
                 console.log("DATA: ", JSON.stringify(data))
