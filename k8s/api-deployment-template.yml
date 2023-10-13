@@ -54,7 +54,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name: devdaze-api-ip
     kubernetes.io/ingress.class: "gce"
-    networking.gke.io/managed-certificates: dev-daze-cert
+    networking.gke.io/managed-certificates: devdaze-api-cert
   labels:
     app: resume-api
 spec:
