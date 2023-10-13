@@ -7,7 +7,6 @@ const TechSkills = () => {
         fetch("https://api.devdaze.org/resume/techskills")
             .then(response => response.json())
             .then(data => {
-                console.log("DATA: ", JSON.stringify(data))
                 setTechSkillsData(data);
             })
             .catch(error => {
