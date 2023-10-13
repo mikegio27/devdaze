@@ -33,15 +33,15 @@ metadata:
 spec:
   rules:
   - host: devdaze.org
-  http:
-    path:
-    - path: /*
-      pathType: Prefix
-      backend:
-        service:
-          name: resume-ui-service
-          port:
-            number: 80
+    http:
+      path:
+      - path: /*
+        pathType: Prefix
+        backend:
+          service:
+            name: resume-ui-service
+            port:
+              number: 80
   tls:
   - hosts:
     - devdaze.org
