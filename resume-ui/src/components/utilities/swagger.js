@@ -3,7 +3,7 @@ const Swagger = () => {
         <iframe 
             title="Swagger Documentation"
             width="100%" 
-            height="600px" 
+            height="80%px" 
             src="https://api.devdaze.org/swagger/index.html">
         </iframe>
     );
