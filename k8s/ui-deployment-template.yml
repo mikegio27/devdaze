@@ -34,7 +34,7 @@ spec:
   rules:
   - host: devdaze.org
     http:
-      path:
+      paths:
       - path: /*
         pathType: Prefix
         backend:
