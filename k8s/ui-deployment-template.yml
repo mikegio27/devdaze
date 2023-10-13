@@ -42,11 +42,6 @@ spec:
             name: resume-ui-service
             port:
               number: 80
-  tls:
-  - hosts:
-    - devdaze.org
-    secretName: $TLS_SECRET
-  
 ---
 apiVersion: v1
 kind: Service
