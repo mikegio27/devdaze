@@ -27,14 +27,25 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name: devdaze-ip
     kubernetes.io/ingress.class: "gce"
+    networking.gke.io/managed-certificates: dev-daze-cert
   labels:
     app: resume-ui
 spec:
-  defaultBackend:
-    service:
-      name: resume-ui-service
-      port:
-        number: 80
+  rules:
+  - host: devdaze.org
+  http:
+    path:
+    - path: /*
+      pathType: Prefix
+      backend:
+        service:
+          name: resume-ui-service
+          port:
+            number: 80
+  tls:
+  - hosts:
+    - devdaze.org
+    secretName: $TLS_SECRET
   
 ---
 apiVersion: v1
