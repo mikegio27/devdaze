@@ -5,7 +5,7 @@ const Objective = () => {
 
     useEffect(() => {
         // Replace this URL with your API endpoint
-        fetch("http://api.devdaze.org/resume/objective")
+        fetch("https://api.devdaze.org/resume/objective")
             .then(response => response.json())
             .then(data => {
                 setObjectiveData(data.objective);

@@ -4,7 +4,7 @@ const TechSkills = () => {
     const [techSkillsData, setTechSkillsData] = useState();
 
     useEffect(() => {
-        fetch("http://api.devdaze.org/resume/techskills")
+        fetch("https://api.devdaze.org/resume/techskills")
             .then(response => response.json())
             .then(data => {
                 console.log("DATA: ", JSON.stringify(data))
