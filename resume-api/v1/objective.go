@@ -7,9 +7,15 @@ import (
 	"github.com/mikegio27/resume-api/services"
 )
 
+// Objective godoc
+//
+//	@Summary	Resume objective
+//	@Produce	json
+//
+// @Success 200 {object} map[string]string "Objective"
+// @Router /objective [get]
 func Objective(c *gin.Context) {
 	objective, err := services.GetObjective()
-	log.Println("Objective request received...")
 	if err != nil {
 		log.Println("Error retrieving objective: ", err)
 		c.JSON(500, gin.H{"error": "Failed to fetch objective"})

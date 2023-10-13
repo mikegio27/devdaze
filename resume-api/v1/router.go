@@ -6,6 +6,9 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	_ "github.com/mikegio27/resume-api/docs"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func SetupRouter() *gin.Engine {
@@ -20,6 +23,8 @@ func SetupRouter() *gin.Engine {
 	log.Println("Router started...")
 	r.Use(cors.New(config))
 	r.GET("/health", Healthcheck)
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+
 	api := r.Group("/resume")
 	{
 		api.GET("/experience", Experience)

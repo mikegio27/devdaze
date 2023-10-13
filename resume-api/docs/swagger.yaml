@@ -1,0 +1,89 @@
+definitions:
+  services.Experience:
+    properties:
+      company:
+        type: string
+      date:
+        type: string
+      department:
+        type: string
+      duties:
+        items:
+          type: string
+        type: array
+      title:
+        type: string
+    type: object
+  services.TechSkills:
+    properties:
+      cicd:
+        items:
+          type: string
+        type: array
+      databases:
+        items:
+          type: string
+        type: array
+      iac:
+        items:
+          type: string
+        type: array
+      languages:
+        items:
+          type: string
+        type: array
+      linux:
+        items:
+          type: string
+        type: array
+      monitoring:
+        items:
+          type: string
+        type: array
+      platforms:
+        items:
+          type: string
+        type: array
+    type: object
+host: api.devdaze.org
+info:
+  contact: {}
+  description: API currently serving my resume
+  title: DevDaze API
+  version: "1.0"
+paths:
+  /experience:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/services.Experience'
+      summary: Resume experience summary
+  /objective:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Objective
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Resume objective
+  /tech-skills:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/services.TechSkills'
+            type: array
+      summary: Resume tech skills summary
+swagger: "2.0"

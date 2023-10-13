@@ -1,0 +1,138 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API currently serving my resume",
+        "title": "DevDaze API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "api.devdaze.org",
+    "paths": {
+        "/experience": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Resume experience summary",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/services.Experience"
+                        }
+                    }
+                }
+            }
+        },
+        "/objective": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Resume objective",
+                "responses": {
+                    "200": {
+                        "description": "Objective",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tech-skills": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Resume tech skills summary",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/services.TechSkills"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "services.Experience": {
+            "type": "object",
+            "properties": {
+                "company": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "department": {
+                    "type": "string"
+                },
+                "duties": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "services.TechSkills": {
+            "type": "object",
+            "properties": {
+                "cicd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "databases": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "iac": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "languages": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linux": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "monitoring": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "platforms": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
