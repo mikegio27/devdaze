@@ -58,17 +58,11 @@ metadata:
   labels:
     app: resume-api
 spec:
-  rules:
-    - host: api.devdaze.org
-      http:
-        paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: resume-api-service
-              port:
-                number: 80
+  defaultBackend:
+    service:
+      name: resume-api-service
+      port:
+        number: 80
 ---
 apiVersion: v1
 kind: Service
