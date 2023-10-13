@@ -14,7 +14,7 @@ import (
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
 	config := cors.DefaultConfig()
-	config.AllowOrigins = []string{"https://devdaze.org"}
+	config.AllowOrigins = []string{"https://devdaze.org", "https://api.devdaze.org", "http://localhost:3000"}
 	config.AllowMethods = []string{"PUT", "GET", "POST", "OPTIONS"}
 	config.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type", "Authorization"}
 	config.ExposeHeaders = []string{"Content-Length"}
