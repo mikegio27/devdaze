@@ -1,4 +1,4 @@
-module github.com/mikegio27/resume-api
+module github.com/mikegio27/devdaze
 
 go 1.21
 
