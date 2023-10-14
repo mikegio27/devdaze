@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: resume-ui
-        image: dozy27/resume-ui:$GITHUB_REF_NAME
+        image: dozy27/resume-ui:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
