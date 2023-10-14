@@ -31,7 +31,7 @@ jobs:
           context: ./resume-ui
           file: ./resume-ui/Dockerfile
           push: true
-          tags: dozy27/resume-ui:latest
+          tags: dozy27/resume-ui:${{GITHUB_REF_NAME}}
           
   deploy:
     runs-on: ubuntu-latest
