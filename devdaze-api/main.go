@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/mikegio27/resume-api/database"
-	_ "github.com/mikegio27/resume-api/docs"
-	v1 "github.com/mikegio27/resume-api/v1"
+	"github.com/mikegio27/devdaze/devdaze-api/database"
+	_ "github.com/mikegio27/devdaze/devdaze-api/docs"
+	v1 "github.com/mikegio27/devdaze/devdaze-api/v1"
 )
 
 // @title			DevDaze API

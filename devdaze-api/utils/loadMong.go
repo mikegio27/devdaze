@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/mikegio27/resume-api/database"
+	"github.com/mikegio27/devdaze/devdaze-api/database"
 )
 
 func LoadMongoData(file_path string, db_name string, mongo_uri string) {

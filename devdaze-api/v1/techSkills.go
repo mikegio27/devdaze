@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
-	"github.com/mikegio27/resume-api/services"
+	"github.com/mikegio27/devdaze/devdaze-api/services"
 )
 
 // Tech Skills
