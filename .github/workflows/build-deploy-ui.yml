@@ -28,10 +28,10 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./resume-ui
-          file: ./resume-ui/Dockerfile
+          context: ./ui
+          file: ./ui/Dockerfile
           push: true
-          tags: dozy27/resume-ui:latest
+          tags: dozy27/devdaze-ui:latest
           
   deploy:
     runs-on: ubuntu-latest

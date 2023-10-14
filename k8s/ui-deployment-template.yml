@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: resume-ui
+  name: devdaze-ui
 spec:
   selector:
     matchLabels:
-      app: resume-ui
+      app: devdaze-ui
   template:
     metadata:
       labels:
-        app: resume-ui
+        app: devdaze-ui
     spec:
       containers:
-      - name: resume-ui
-        image: dozy27/resume-ui:latest
+      - name: devdaze-ui
+        image: dozy27/devdaze-ui:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -23,30 +23,30 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: resume-ui
+  name: devdaze-ui
   annotations:
     kubernetes.io/ingress.global-static-ip-name: devdaze-ip
     kubernetes.io/ingress.class: "gce"
     networking.gke.io/managed-certificates: devdaze-ui-cert
   labels:
-    app: resume-ui
+    app: devdaze-ui
 spec:
   defaultBackend:
     service:
-      name: resume-ui-service
+      name: devdaze-ui-service
       port:
         number: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: resume-ui-service
+  name: devdaze-ui-service
   labels:
-    app: resume-ui
+    app: devdaze-ui
 spec:
   type: NodePort
   selector:
-    app: resume-ui
+    app: devdaze-ui
   ports:
   - protocol: TCP
     port: 80

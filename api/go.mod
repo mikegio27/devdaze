@@ -1,4 +1,4 @@
-module github.com/mikegio27/devdaze
+module github.com/mikegio27/devdaze/api
 
 go 1.21
 

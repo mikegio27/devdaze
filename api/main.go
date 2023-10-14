@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/mikegio27/api/database"
-	_ "github.com/mikegio27/api/docs"
-	v1 "github.com/mikegio27/api/v1"
+	"github.com/mikegio27/devdaze/api/database"
+	_ "github.com/mikegio27/devdaze/api/docs"
+	v1 "github.com/mikegio27/devdaze/api/v1"
 )
 
 // @title			DevDaze API
